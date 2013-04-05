@@ -1,0 +1,62 @@
+//  5.4.2013   life.dart  
+//  3 files tied together with part / part of / library directive. 
+
+
+library life.dart;
+
+part 'baselib.dart';
+part 'drone.dart';
+
+
+
+void main() {
+  print("Hello, World!");
+  var drone = new Drone(); 
+//   drone.presentClass('Drone-Class'); 
+  print(drone.className);
+  
+}
+
+=========================================     ================================================   ===========
+//    baselib.dart  
+//   This goes with import to life.dart
+
+
+//  part of life;     //  this brings remark...
+part of life.dart;    //  no remark..
+
+class Baselib {
+  String beginRow = ('__________  __________  Beginning  __________  __________');
+  String endRow   = ('==========  ==========  En of Prog ==========  ==========');
+   
+  void presentClass (String className) {
+    print(beginRow);
+    print(className);
+    print(endRow);
+  }
+  
+}
+
+=====================================   ==========================================    ========================
+
+//   drone.dart
+
+
+//  part of life;     //  this brings remark...  =>>
+part of life.dart;    //  No error !!
+
+/*  Multiple markers at this line
+  - cannot resolve life
+  - This part was included by 'life.dart' via a 'part' directive, 
+  but uses name 'life' in 'part of' 
+   directive    */  
+
+
+
+class Drone extends Baselib {   
+  String className = "drone";
+  
+}
+
+
+
