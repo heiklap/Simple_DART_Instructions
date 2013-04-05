@@ -1,0 +1,48 @@
+//  5.4.2013   life.dart  
+//  This is just to show how   3 files are tied together with import directive. 
+
+
+import 'baselib.dart';
+import 'drone.dart';
+
+
+void main() {
+  print("Hello, World!");
+  var drone = new Drone(); 
+//   drone.presentClass('Drone-Class'); 
+  print(drone.className);
+  
+}
+=========================================================================================================
+
+//    baselib.dart  
+//   This goes with import to life.dart
+
+library baselib;
+
+
+class BaseLib {
+  String beginRow = ('__________  __________  Beginning  __________  __________');
+  String endRow   = ('==========  ==========  En of Prog ==========  ==========');
+   
+  void presentClass (String className) {
+    print(beginRow);
+    print(className);
+    print(endRow);
+  }
+  
+}
+
+=============================================================================================================
+//   drone.dart
+
+
+library drone;
+
+
+class Drone extends BaseLib {
+  String className = "drone";
+  
+}
+
+
