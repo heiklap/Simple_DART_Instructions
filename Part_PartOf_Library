@@ -13,7 +13,11 @@ void main() {
   print("Hello, World!");
   var drone = new Drone(); 
 //   drone.presentClass('Drone-Class'); 
+
+  print(drone.beginRow);
   print(drone.className);
+  print(drone.endRow);
+
   
 }
 
