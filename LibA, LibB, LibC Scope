@@ -79,6 +79,25 @@ void callLibC() => print('Library c is beeing called....');
 void callLibBfromLibC() =>  print('Library B is called from lib C... ');
 
 
-x
+
+
+========     OUTPUT OF PROGRAM SHOULD BE THIS:    
+
+Hello, World!
+This is Lib B.... 
+Library C is called from lib B... 
+Library c is beeing called....
+Library B is called from lib C... 
+Now are coming the inner calls from main / B to C  ..  
+---------------------------------------------------
+This is Lib C.... 
+Library c is beeing called....
+  _______
+ This  String is from C-lib    ..
+ This  String is from C-lib    ..
+B-Job i done
+
+
+=====================     ================================= 
 
 
