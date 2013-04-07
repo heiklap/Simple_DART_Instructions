@@ -1,0 +1,84 @@
+Question:    Can Lib_B  and Lib_C  use each others routines and methods?  
+x
+_______________________________________________________________________________________
+//  7.4.2013   testing library scopes. 
+//  File lib_all.dart  
+
+library lib_all.dart; 
+
+part 'lib_b.dart';
+part 'lib_c.dart';
+
+
+void main() {
+  print("Hello, World!");
+  
+ 
+  //  These are accessable from the main cycle.  
+  voiceFromLibB();
+  callLibCfromLibB();
+  callLibC();
+  callLibBfromLibC();
+ 
+  
+  print('Now are coming the inner calls from main / B to C  ..  ');
+  print('---------------------------------------------------');
+    innerCallFromBClass();
+    anotherInnerCallFromBClass();
+  
+  print('  _______'); 
+  
+  doBJob();
+  print('B-Job i done');
+    
+}
+
+
+=================================================================================
+//   lib_b.dart
+//   can lib_b  and lib_c   use each others methods?? 
+
+part of lib_all.dart; 
+
+
+String partnersString = strFromCLib;
+
+
+void voiceFromLibB() => print('This is Lib B.... ');
+
+void callLibCfromLibB() =>  print('Library C is called from lib B... ');   
+
+
+// this is method from lib_c.dart   
+ void innerCallFromBClass() => voiceFromLibC();
+ void anotherInnerCallFromBClass() => callLibC();
+ 
+ void doBJob() {  
+   print(strFromCLib);
+   print(partnersString);   
+ }
+
+
+
+
+-----------------------------------------    ------------------------------------------------------
+//   lib_c.dart
+//   can lib_b  and lib_c   use each others methods?? 
+
+part of lib_all.dart; 
+
+
+String libraryCNameIs = " Name of this part is  lib:C ";
+String  strFromCLib = ' This  String is from C-lib    ..';
+
+
+void voiceFromLibC() => print('This is Lib C.... ');
+
+void callLibC() => print('Library c is beeing called....');
+
+void callLibBfromLibC() =>  print('Library B is called from lib C... ');
+
+
+x
+
+
