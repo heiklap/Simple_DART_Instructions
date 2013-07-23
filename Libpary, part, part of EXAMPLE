@@ -1,0 +1,53 @@
+//  ballgame.dart--   To present use of libraries and parts..
+
+library ballgame;
+
+//  import 'dart:html';      // not needed here....
+// ...Other imports go here...
+
+part 'ball.dart';
+part 'util.dart';
+
+
+
+void main() {
+  print("Hello, Ball Game!");
+  var b = new Ball();
+  print(b.name);
+
+  var u = new Util();
+  print(u.name);
+}
+
+//==================================================
+
+//   ball.dart
+
+
+part of ballgame;
+
+class Ball {
+
+  String name = "This is a Ball class  ";
+}
+
+// --------------------------------------------
+
+
+//   util.dart
+
+
+part of ballgame;
+
+class Util {
+  String name = "This is a Util class  ";
+}
+
+//  ..............................................
+
+
+OUTPUT:
+Hello, Ball Game!
+This is a Ball class  
+This is a Util class  
+
